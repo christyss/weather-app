@@ -1,0 +1,99 @@
+@use '../../../partials/mixins' as *;
+
+.panel{
+    border: 1px solid black;
+    border-radius: 0.8rem;
+    margin-left: 0.5rem;
+    width: 18rem;
+    @include mid-tablet {
+        width: 20rem;
+        margin: 0 1rem;
+    }
+    @include tablet {
+        width: 26rem;
+        margin: 0 2rem 1rem 2rem;
+    }
+    
+    &-title{
+        background-color: rgb(181, 222, 255);
+        padding: 0.5rem;
+        border-radius: 0.8rem 0.8rem 0 0;
+        font-size: 0.9rem;
+        @include mid-tablet {
+            font-size: 1rem;
+        }
+        
+    }
+    &-body{
+        display: flex;
+        justify-content: space-between;
+        padding: 0.5rem;
+        background-color: rgba(255, 255, 255, 0.479);
+        border-radius: 0 0 0.8rem 0.8rem;
+        
+    }
+    &-item{
+        margin-bottom: 0.5rem;
+        font-size: 0.8rem;
+        @include mid-tablet {
+            font-size: 0.9rem;
+        }
+        @include tablet { 
+            font-size: 1rem;
+        }
+    }
+    &-content--right{
+        display: flex;
+        flex-direction: column;
+        
+    }
+    &-img{
+        height: 3rem;
+        width: 3rem;
+        margin-left: 1.5rem;
+        @include mid-tablet { 
+            height: 4rem;
+            width: 4rem;
+            margin-left: 1rem;
+        }
+        @include tablet { 
+            height: 5rem;
+            width: 5rem;
+        }
+    }
+}
+.btn{
+    height: 2.5rem;
+    background-color: rgb(59, 131, 190);
+    font-weight: bold;
+    color: white;
+    border: none;
+    border-radius: 5%;
+    cursor: pointer;
+    padding: 0 1rem;
+    font-size: 0.8rem;
+    @include tablet {
+        height: 3rem;
+        font-size: 1rem;
+    }
+    
+}
+.loading{
+    display: flex;
+    justify-content: center;
+    &::after{
+        content: "";
+        width: 3rem;
+        height: 3rem;
+        border: 0.5rem solid rgb(237, 242, 245);
+        border-top: 0.5rem solid rgb(13, 108, 197);
+        border-bottom: 0.5rem solid rgb(13, 108, 197);
+        border-radius: 50%;
+        animation: loading 0.5s linear infinite;
+    }
+    @keyframes loading {
+        to{
+            transform: rotate(360deg);
+        }
+    }
+}

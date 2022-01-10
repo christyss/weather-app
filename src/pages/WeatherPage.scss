@@ -1,0 +1,28 @@
+@use '../partials/mixins' as *;
+
+.page-container{
+    height: 120vh;
+    background-image: url('https://images.unsplash.com/photo-1503173702907-ff77ecdf51d0?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1467&q=80');
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat; 
+    @include desktop{
+        height: 110vh;
+    }
+}
+.home{
+    display: flex;
+    justify-content: flex-end;
+    text-decoration: none;
+    padding: 0.5rem;
+    &-btn{
+        border: none;
+        background-color: rgb(135, 183, 238);
+        border-radius: 5px;
+        padding: 0.5rem;
+        color: white;
+        @include desktop{
+            font-size: 1.1rem;
+        }
+    }
+}

@@ -1,0 +1,44 @@
+@use '../partials/mixins' as *;
+
+.container{
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-image: url('https://images.unsplash.com/photo-1620503374956-c942862f0372?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=870&q=80');
+    background-size: cover;
+    background-position: center;
+}
+.content{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 1rem;
+    color: rgb(241, 237, 228);
+
+    &-time{
+        font-size: 4.5rem;
+        margin-bottom: 5rem;
+        @include desktop{
+            font-size: 6rem;
+        }
+    }
+    &-text{
+        font-size: 1.2rem;
+        color: rgb(9, 78, 43);
+    }
+    &-btn{
+        height: 3rem;
+        width: 3rem;
+        border-radius: 50%;
+        background-color: rgb(15, 110, 63);
+        &:hover{
+            transform: scale(1.2);
+            
+        }
+        &:active{
+            transform: scale(1);
+            background-color: rgb(22, 151, 87);
+        }
+    }
+}

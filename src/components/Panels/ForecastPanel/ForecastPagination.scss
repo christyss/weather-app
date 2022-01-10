@@ -1,0 +1,35 @@
+@use '../../../partials/mixins' as *;
+
+.pagination{
+    list-style: none;
+    display: flex;
+    align-items: flex-end;
+    width: 20%;
+    height: 3rem;
+    
+}
+.page-link{
+    padding: 0 0.25rem;
+    border: 1px solid rgb(88, 88, 94);
+    cursor: pointer;
+    background-color: rgba(201, 218, 223, 0.178);
+    &:hover{
+        font-size: 1.25rem;
+    }
+    @include mid-tablet {
+        padding: 0.25rem 0.35rem;
+    }
+    @include tablet {
+        padding: 0.25rem 0.5rem;
+    }
+    
+}
+.prev-link{
+    border-radius: 5px 0 0 5px;
+}
+.next-link{
+    border-radius: 0 5px 5px 0;
+}
+.page-active{
+    color: rgb(22, 131, 182);
+}
