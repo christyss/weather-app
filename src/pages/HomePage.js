@@ -1,4 +1,5 @@
 import React, { useState, useEffect } from 'react';
+import { Link } from 'react-router-dom';
 import convertTime from '../utils/convertTime';
 import './HomePage.scss';
 
@@ -6,10 +7,13 @@ export default function HomePage() {
     const [currentTime, setCurrentTime] = useState();
 
     useEffect(() => {
-        setInterval(()=>{
+        const dynamicTime = setInterval(()=>{
             let time = new Date();
             setCurrentTime(convertTime(time))
-        }, 1000)
+        }, 1000);
+        return () =>{
+            clearInterval(dynamicTime);
+        }
     }, [])
 
     return (
@@ -17,7 +21,7 @@ export default function HomePage() {
             <div className="content">
                 <h1 className="content-time">{currentTime}</h1>
                 <h2 className="content-text">Click to Check Weather of Cities</h2>
-                <a href="/cityWeather"><div className="content-btn"></div></a>
+                <Link to={'/cityWeather'}><div className="content-btn"></div></Link>
             </div>
         </section>
     )
