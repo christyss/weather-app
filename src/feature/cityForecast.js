@@ -5,7 +5,7 @@ export const getCityForecast = createAsyncThunk(
     "cityForecast/getCityForecast",
     async (cityId) => {
         try{
-            const response = await axios.get(`http://api.openweathermap.org/data/2.5/forecast?id=${cityId}&units=metric&appid=a30f79a44d74a7b2c4c8f414d958a23e`)
+            const response = await axios.get(`https://api.openweathermap.org/data/2.5/forecast?id=${cityId}&units=metric&appid=a30f79a44d74a7b2c4c8f414d958a23e`)
             return {
                 city: response.data.city.name,
                 country: response.data.city.country,
