@@ -44,7 +44,7 @@ function DetailPanels() {
                 <div className='panel-content--right'>
                     {weather.map((item, idx) => {
                         return <div key={idx}>
-                            <img className="panel-img" src={`http://openweathermap.org/img/wn/${item.icon}@2x.png`} alt={item.description} />
+                            <img className="panel-img" src={`https://openweathermap.org/img/wn/${item.icon}@2x.png`} alt={item.description} />
                             </div>
                     })}
                     <button className="btn" onClick={()=> dispatch(showHide(true))}>5 day forecast</button>
