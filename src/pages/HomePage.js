@@ -10,7 +10,7 @@ export default function HomePage() {
         const dynamicTime = setInterval(()=>{
             let time = new Date();
             setCurrentTime(convertTime(time))
-        }, 1000);
+        }, 10);
         return () =>{
             clearInterval(dynamicTime);
         }
